@@ -26,9 +26,21 @@ class ViewController: UIViewController {
         let userGotItRight=quizBrain.checkAnswer(userAnswer)
         
         if userGotItRight {
-            sender.backgroundColor=UIColor.green
+            UIView.transition(with: sender,
+                                      duration: 0.6,
+                                      options: .transitionFlipFromLeft,
+                                      animations: {
+                                        sender.backgroundColor=UIColor.green
+
+                    }, completion: nil)
         }else{
-            sender.backgroundColor=UIColor.red
+            UIView.transition(with: sender,
+                                      duration: 0.6,
+                                      options: .transitionFlipFromLeft,
+                                      animations: {
+                                        sender.backgroundColor=UIColor.red
+
+                    }, completion: nil)
         }
         quizBrain.nextQuestion() 
         
