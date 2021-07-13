@@ -27,24 +27,26 @@ class ViewController: UIViewController {
         
         if userGotItRight {
             UIView.transition(with: sender,
-                                      duration: 0.6,
+                                      duration: 0.1,
                                       options: .transitionFlipFromLeft,
                                       animations: {
                                         sender.backgroundColor=UIColor.green
 
                     }, completion: nil)
+            sender.backgroundColor=UIColor.green
         }else{
             UIView.transition(with: sender,
-                                      duration: 0.6,
+                                      duration: 0.1,
                                       options: .transitionFlipFromLeft,
                                       animations: {
                                         sender.backgroundColor=UIColor.red
 
                     }, completion: nil)
+            sender.backgroundColor=UIColor.red
         }
         quizBrain.nextQuestion() 
         
-        timer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(uiUpdate), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(uiUpdate), userInfo: nil, repeats: true)
     }
     @objc func uiUpdate() {
         
