@@ -1,6 +1,7 @@
 
 
 import UIKit
+import SPConfetti
 
 class ViewController: UIViewController {
     
@@ -9,7 +10,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var barProgress: UIProgressView!
     @IBOutlet weak var trueButton: UIButton!
     @IBOutlet weak var falseButton: UIButton!
-    
+    var lastChecker: Bool = false
     var timer=Timer()
     var quizBrain=QuizBrain()
     
@@ -20,33 +21,39 @@ class ViewController: UIViewController {
     }
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
-        uiUpdate()
-        
         let userAnswer=sender.currentTitle!
         let userGotItRight=quizBrain.checkAnswer(userAnswer)
         
         if userGotItRight {
+            print("RIGHT")
             UIView.transition(with: sender,
-                                      duration: 0.1,
-                                      options: .transitionFlipFromLeft,
-                                      animations: {
-                                        sender.backgroundColor=UIColor.green
-
-                    }, completion: nil)
-            sender.backgroundColor=UIColor.green
+                              duration: 0.5,
+                              options: .allowUserInteraction,
+                              animations: {
+                                sender.backgroundColor=UIColor.green
+                                
+                              }, completion: nil)
+//            sender.backgroundColor=UIColor.green
         }else{
+            print("WRONG")
             UIView.transition(with: sender,
-                                      duration: 0.1,
-                                      options: .transitionFlipFromLeft,
-                                      animations: {
-                                        sender.backgroundColor=UIColor.red
-
-                    }, completion: nil)
-            sender.backgroundColor=UIColor.red
+                              duration: 0.5,
+                              options: .allowUserInteraction,
+                              animations: {
+                                sender.backgroundColor=UIColor.red
+                                
+                              }, completion: nil)
+//            sender.backgroundColor=UIColor.red
         }
-        quizBrain.nextQuestion() 
+        lastChecker = quizBrain.checkLastQuestion()
+        if lastChecker == true{
+            SPConfetti.startAnimating(.fullWidthToDown, particles: [.triangle,.circle,.polygon], duration: 5)
+        }else{
+            
+        }
+        quizBrain.nextQuestion()
         
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(uiUpdate), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(uiUpdate), userInfo: nil, repeats: false)
     }
     @objc func uiUpdate() {
         

@@ -49,6 +49,14 @@ struct QuizBrain {
     func getScore() -> Int{
         return score
     }
+    
+    func checkLastQuestion() -> Bool{
+        if questionNumber + 1 == quiz.count && score >= 2{
+            return true
+        }else{
+            return false
+        }
+    }
    
     
 }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		AD4BDE5322D878BC005BA4CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD4BDE5222D878BC005BA4CC /* Assets.xcassets */; };
 		AD4BDE5622D878BC005BA4CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4BDE5422D878BC005BA4CC /* LaunchScreen.storyboard */; };
 		AD7631B622F9851900C6E71B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AD7631B522F9851900C6E71B /* README.md */; };
+		D57CC8E426AF2F3D005C2CA9 /* SPConfetti in Frameworks */ = {isa = PBXBuildFile; productRef = D57CC8E326AF2F3D005C2CA9 /* SPConfetti */; };
 		D5CF4E7E24586B7C00152A70 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CF4E7D24586B7C00152A70 /* Question.swift */; };
 		D5CF4E832458D9EF00152A70 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CF4E822458D9EF00152A70 /* QuizBrain.swift */; };
 /* End PBXBuildFile section */
@@ -37,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D57CC8E426AF2F3D005C2CA9 /* SPConfetti in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +118,9 @@
 			dependencies = (
 			);
 			name = "Quizzler-iOS13";
+			packageProductDependencies = (
+				D57CC8E326AF2F3D005C2CA9 /* SPConfetti */,
+			);
 			productName = "Quizzler-iOS13";
 			productReference = AD4BDE4622D878BA005BA4CC /* Quizzler-iOS13.app */;
 			productType = "com.apple.product-type.application";
@@ -144,6 +149,9 @@
 				Base,
 			);
 			mainGroup = AD4BDE3D22D878BA005BA4CC;
+			packageReferences = (
+				D57CC8E226AF2F3D005C2CA9 /* XCRemoteSwiftPackageReference "SPConfetti" */,
+			);
 			productRefGroup = AD4BDE4722D878BA005BA4CC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -374,6 +382,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D57CC8E226AF2F3D005C2CA9 /* XCRemoteSwiftPackageReference "SPConfetti" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ivanvorobei/SPConfetti";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D57CC8E326AF2F3D005C2CA9 /* SPConfetti */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D57CC8E226AF2F3D005C2CA9 /* XCRemoteSwiftPackageReference "SPConfetti" */;
+			productName = SPConfetti;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AD4BDE3E22D878BA005BA4CC /* Project object */;
 }

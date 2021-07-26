@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SPConfetti",
+        "repositoryURL": "https://github.com/ivanvorobei/SPConfetti",
+        "state": {
+          "branch": null,
+          "revision": "09817de8dba1923826196b7761dcb5a3ac15f70c",
+          "version": "1.2.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
