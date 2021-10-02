@@ -1,10 +1,9 @@
 
 
 import Foundation
-struct Question{
+struct Question {
     let text:String
     let answer:String
-    
     
     init(q:String,a:String) {
         text=q
@@ -12,4 +11,4 @@ struct Question{
         
     }
 }
- 
+
