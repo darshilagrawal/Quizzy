@@ -19,3 +19,6 @@ A program for trivia quiz app. If you have another field of expertise such as la
 * Compare Swift Classes with Swift Structs and know when to use which.
 * Learn about Object Oriented Programming.
 * How to refactor code and stay organised.
+
+## Screenshots
+<img src="Documentation/Confetti.png" width="250" height="500"> || <img src="Documentation/right.png" width="250" height="500"> || <img src="Documentation/wrong.png" width="250" height="500">

@@ -46,8 +46,9 @@ class ViewController: UIViewController {
             //            sender.backgroundColor=UIColor.red
         }
         lastChecker = quizBrain.checkLastQuestion()
-        if lastChecker == true {
+        if lastChecker == true && quizBrain.getScore() > 1 {
             SPConfetti.startAnimating(.fullWidthToDown, particles: [.triangle,.circle,.polygon], duration: 5)
+            
         } else {
             
         }
@@ -57,7 +58,6 @@ class ViewController: UIViewController {
     }
     
     @objc func uiUpdate() {
-        
         barProgress.progress=quizBrain.getProgress()
         questionText.text=quizBrain.getQuestionText()
         scoreLabel.text="Score \(quizBrain.getScore())"
